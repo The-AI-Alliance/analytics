@@ -3,7 +3,7 @@
 import aws_cdk as cdk
 from root_env_stack import RootEnvStack
 
-# aaa = AI Alliance Analytics Agent
+# anl = AI Alliance Analytics Stack
 application_ci = "anl"
 
 app = cdk.App()
