@@ -4,8 +4,8 @@
 # but it has no (visible) files in it...
 
 aws s3api delete-objects \
-    --bucket aaa-analytics-us-east-1 \
+    --bucket ${bucket_name} \
     --delete "$(aws s3api list-object-versions \
-    --bucket aaa-analytics-us-east-1 \
+    --bucket ${bucket_name} \
     --output json \
     --query '{Objects: Versions[].{Key:Key,VersionId:VersionId}}')"
