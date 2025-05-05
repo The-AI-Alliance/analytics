@@ -5,6 +5,7 @@ import aws_cdk
 
 from persistence_stack.persistence_stack import PersistenceStack
 from access_stack.access_stack import AccessStack
+from sql_stack.sql_stack import SqlStack
 from config.bucket_attributes import BucketAttributes
 
 
@@ -43,4 +44,12 @@ class RegionalStack(aws_cdk.Stack):
             application_ci=application_ci,
             is_primary_region=is_primary_region,
             bucket=persistence_stack.analytics_bucket,
+        )
+
+        sql_stack = SqlStack(
+            self,
+            "sql_stack",
+            env=env,
+            application_ci=application_ci,
+            output_bucket_retain_policy=False,
         )
