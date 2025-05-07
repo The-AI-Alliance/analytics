@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "ai_alliance_analytics_msck_repair"
+version = "0.0.1"
+description = "Job to execute MSCK REPAIR on the AI Alliance analytics tables"
+authors = ["AI Alliance Data Team <data@ai_alliance.com>"]
+license = "Apache License Version 2.0"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+boto3 = "^1.38.11"
+awswrangler = "^3.11.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
