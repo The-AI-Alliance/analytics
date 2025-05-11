@@ -24,20 +24,14 @@ Describe the testing performed to validate the changes:
 Provide an overview of the code changes made:
 
 * New files or directories added
-* Modified files or functions
-* Deleted files or functions
-
-## Example Usage
-Include an example of how to use the new function or feature:
-
-* Code snippet demonstrating usage
-* Expected output or results
+* Modified files or jobs
+* Deleted files or jobs
 
 ## Checklist
 Confirm that the following have been completed:
 
-* [ ] All new functions have been documented in the `docs/` directory
-* [ ] Unit tests have been added for new functions
+* [ ] All new jobs have been documented in the `docs/` directory
+* [ ] Unit tests have been added for new jobs
 * [ ] Code follows the existing style and convention
 * [ ] API keys or sensitive information have been removed
 
