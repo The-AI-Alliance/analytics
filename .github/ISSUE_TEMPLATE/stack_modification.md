@@ -1,6 +1,6 @@
 ---  
 name: Stack Modification  
-about: Propose a stack modification to the Analytic Agent stack 
+about: Propose a stack modification to the Analytic stack 
 title: "[Stack Modification] "  
 labels: enhancement  
 assignees: ''
@@ -42,7 +42,7 @@ Add any other context or screenshots about the proposal here.
 ---  
 
 ## Development Plan
-Outline your plan for implementing this function, including:
+Outline your plan for implementing this stack, including:
 - [ ] Estimated timeline
 - [ ] Required resources
 - [ ] Testing strategy
