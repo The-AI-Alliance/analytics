@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ai_alliance_analytics_pypi_analytics"
+version = "0.0.1"
+description = "Job to fetch package analytics from PyPi"
+authors = ["AI Alliance Data Team <data@ai_alliance.com>"]
+license = "Apache License Version 2.0"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+boto3 = "^1.38.11"
+pandas = "^2.2.3"
+pypistats = "^1.10.0"
+pyarrow = "^20.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
