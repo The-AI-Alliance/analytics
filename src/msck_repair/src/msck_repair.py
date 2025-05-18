@@ -23,5 +23,6 @@ input_df = wr.catalog.tables(database=database_name)
 
 for index, row in input_df.iterrows():
     print(f"Repairing table: {database_name}.{row["Table"]}")
-    wr.athena.repair_table(table=row["Table"])
+    status = wr.athena.repair_table(database=database_name, table=row["Table"])
+    print(f"Status: {status}")
 print(f"Ending job: {datetime.now(timezone.utc)}")
