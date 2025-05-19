@@ -1,7 +1,6 @@
 drop table aialliance.github_analytics
 
 /* Table definition */
-/* Need to review all of these, as some are perpetually missing*/
 CREATE EXTERNAL TABLE IF NOT EXISTS aialliance.github_analytics(
 	timestamp_utc timestamp,
 	repository_name string,
@@ -32,7 +31,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS aialliance.github_analytics(
     traffic_clones_last_day_total int,
     traffic_clones_last_day_unique int,
     traffic_top_referrers_date ARRAY <string>,
-    /*traffic_top_paths_data ARRAY <string>,*/
+    /*traffic_top_paths_data ARRAY <string>, https://github.com/The-AI-Alliance/gofannon/issues/289 */
     issues_opened_last_period int,
     issues_closed_last_period int,
     prs_opened_last_period int,
@@ -45,7 +44,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS aialliance.github_analytics(
 )
 partitioned by (service string, repository string, `date` date)
 STORED AS PARQUET
-LOCATION "s3://<bucket>/"
+LOCATION "s3://<bucket>/service=github/"
 
 
 /* Need to execute this to process new partitions*/

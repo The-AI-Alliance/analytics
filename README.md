@@ -1,41 +1,77 @@
-# README for MICROSITE_TITLE
+# AI Alliance Analytics
 
-[Published Documentation](https://the-ai-alliance.github.io/REPO_NAME/)
+## Purpose
+The purpose of this repository is to host code and documentation for measuring and presenting key process indicators (KPIs) for measturing AI Alliance effectiveness. Intent:
 
-This repo contains the code and documentation for the AI Alliance: MICROSITE_TITLE.
+### 🔍 1. Data-Driven Decision Making
+- Enables strategic and operational decisions based on actual data.
+- Supports A/B testing and performance comparisons.
 
-See the [repo README](https://the-ai-alliance.github.io/REPO_NAME/) for additional details about this project.
+### 📊 2. Improved Operational Efficiency
+- Identifies working group bottlenecks, redundancies, and inefficiencies.
+- Optimizes resource allocation, staffing, and workflows.
 
-TODO - Describe this project
+### 📈 3. Performance Monitoring
+- Tracks Key Performance Indicators (KPIs) in real time.
+- Highlights underperforming areas for targeted improvements.
 
-## Quick Tip - View the Website Locally
+### 💡 4. Participant Insights
+- Analyzes participant behavior, preferences, and patterns.
+- Aids in project segmentation and marketing.
 
-See [GITHUB_PAGES.md](GITHUB_PAGES.md) for information on viewing the site locally with `jekyll`.
+### 🚀 5. Competitive Advantage
+- Provides insights into production and consumption trends and competitors.
+- Enables quick adaptation to changing environments.
 
-## Getting Involved
+### 📉 6. Risk Management
+- Flags compliance issues, and anomalies early.
+- Supports scenario modeling and forecasting.
 
-We welcome contributions as PRs. Please see our [Alliance community repo](https://github.com/The-AI-Alliance/community/) for general information about contributing to any of our projects. This section provides some specific details you need to know.
+### 📚 7. Knowledge Sharing
+- Centralizes insights for consistent reporting.
+- Fosters collaboration across departments through shared data.
 
-In particular, see the AI Alliance [CONTRIBUTING](https://github.com/The-AI-Alliance/community/blob/main/CONTRIBUTING.md) instructions. You will need to agree with the AI Alliance [Code of Conduct](https://github.com/The-AI-Alliance/community/blob/main/CODE_OF_CONDUCT.md).
+## Metrics Sources
 
-All _code_ contributions are licensed under the [Apache 2.0 LICENSE](https://github.com/The-AI-Alliance/community/blob/main/LICENSE.Apache-2.0) (which is also in this repo, [LICENSE.Apache-2.0](LICENSE.Apache-2.0)).
+| Metrics Source | Metric List |
+|-----------------|-----------------|
+| GitHub   | [aialliance.github_analytics](./scripts/github_analytics.sql) |
+| PyPi    | [aialliance.pypi](./scripts/pypi_analytics.sql)   |
+| HuggingFace Data Sets   |  [huggingface.datasets](https://github.com/The-AI-Alliance/open-trusted-data-initiative/blob/main/src/src/analytics/query.sql) | 
+| HuggingFace Data Sets Detail  |  [huggingface.datasets_detail](https://github.com/The-AI-Alliance/open-trusted-data-initiative/blob/main/src/src/analytics/query.sql) | 
 
-All _documentation_ contributions are licensed under the [Creative Commons Attribution 4.0 International](https://github.com/The-AI-Alliance/community/blob/main/LICENSE.CC-BY-4.0) (which is also in this repo, [LICENSE.CC-BY-4.0](LICENSE.CC-BY-4.0)).
 
-All _data_ contributions are licensed under the [Community Data License Agreement - Permissive - Version 2.0](https://github.com/The-AI-Alliance/community/blob/main/LICENSE.CDLA-2.0) (which is also in this repo, [LICENSE.CDLA-2.0](LICENSE.CDLA-2.0)).
 
-### We use the "Developer Certificate of Origin" (DCO).
+## How to Contribute
 
-> [!WARNING]
-> Before you make any git commits with changes, understand what's required for DCO.
+You can contribute in several ways:
 
-See the Alliance contributing guide [section on DCO](https://github.com/The-AI-Alliance/community/blob/main/CONTRIBUTING.md#developer-certificate-of-origin) for details. In practical terms, supporting this requirement means you must use the `-s` flag with your `git commit` commands.
+### Add an Existing GitHub Repository
 
-## About the GitHub Pages Website Published from this Repo
+Adding a daily job to collect metrics from an existing GitHub repository is easy:
 
-The website is published using [GitHub Pages](https://pages.github.com/), where the pages are written in Markdown and served using [Jekyll](https://github.com/jekyll/jekyll). We use the [Just the Docs](https://just-the-docs.github.io/just-the-docs/) Jekyll theme.
+1. Add the [collect_metrics.yml](https://github.com/The-AI-Alliance/gofannon/blob/main/.github/workflows/collect_metrics.yml) as a workflow to your project.
 
-See [GITHUB_PAGES.md](GITHUB_PAGES.md) for more information.
+2. Add the following secrets to your project:
 
-> [!NOTE]
-> As described above, all documentation is licensed under Creative Commons Attribution 4.0 International. See [LICENSE.CDLA-2.0](LICENSE.CDLA-2.0)).
+| Secret | Value |
+|-----------------|-----------------|
+| AWS_S3_BUCKET | See AI Alliance analytics team |
+| AWS_REGION | See AI Alliance analytics team |
+
+### Add a New Metrics Source
+
+Adding a new metrics source can be accomplished as follows:
+1. Use Python and the source API to query out the desired metrics. [Here is an example for PyPi](./src/pypi/src/pypi.py).
+2. Build the Python code into a Docker container. [Here is an example build script for PyPi](./src/pypi/build.sh), and [here is an example Dockerfile for PyPi](./src/pypi/Dockerfile).
+3. Test the Docker container locally. [Here is an example local run script for PyPi](./src/pypi/run.sh). You will need AWS access to verify the execution. See the AI Alliance analytics team for assistance.
+4. Push the Docker container to the AI Alliance Docker store. [Here is an example push script for PyPi](./src/pypi/push.sh).
+5. To schedule the job for recurring execution, see the AI Alliance analytics team.
+6. To access the nightly execution logs for the job, see the AI Alliance analytics team.
+
+
+### Create a New or Modify an Existing Dashboard
+
+The AI Alliance presentation layer uses [Grafana](https://grafana.com/). Creating a new dashboard will require access to the AI Alliance Grafana server. See the AI Alliance analytics team.
+
+Creating or modifying a dashboard will require basic SQL query / filtering / aggregating / joining skills.
