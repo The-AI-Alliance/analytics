@@ -53,6 +53,7 @@ Adding a daily job to collect metrics from an existing GitHub repository is easy
 1. Add the [collect_metrics.yml](https://github.com/The-AI-Alliance/gofannon/blob/main/.github/workflows/collect_metrics.yml) as a workflow to your project.
 
 2. Add the following secrets to your project:
+
 | Secret | Value |
 |-----------------|-----------------|
 | AWS_S3_BUCKET | See AI Alliance analytics team |
