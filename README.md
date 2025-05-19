@@ -17,7 +17,7 @@ The purpose of this repository is to host code and documentation for measuring a
 
 ### 💡 4. Participant Insights
 - Analyzes participant behavior, preferences, and patterns.
-- Aids in audience segmentation and personalized marketing.
+- Aids in project segmentation and marketing.
 
 ### 🚀 5. Competitive Advantage
 - Provides insights into production and consumption trends and competitors.
