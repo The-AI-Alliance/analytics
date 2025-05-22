@@ -50,7 +50,8 @@ You can contribute in several ways:
 
 Adding a daily job to collect metrics from an existing GitHub repository is easy:
 
-1. Add the [collect_metrics.yml](https://github.com/The-AI-Alliance/gofannon/blob/main/.github/workflows/collect_metrics.yml) as a workflow to your project.
+1. Add the [collect_metrics.yml](https://github.com/The-AI-Alliance/gofannon/blob/main/.github/workflows/collect_metrics.yml) as a workflow to your project at `./github/workflows/collect_metrics.yml`
+2. Add thre [collect_metrics.py](https://github.com/The-AI-Alliance/gofannon/blob/main/.github/scripts/collect_metrics.py) to your projects at `./github/scripts/collect_metrics.py`
 
 2. Add the following secrets to your project:
 
