@@ -59,6 +59,8 @@ Adding a daily job to collect metrics from an existing GitHub repository is easy
 |-----------------|-----------------|
 | AWS_S3_BUCKET | See AI Alliance analytics team |
 | AWS_REGION | See AI Alliance analytics team |
+| SPECIAL_GH_TOKEN | This needs to be a GitHUb user token than has rights for accessing the repo |
+ 
 
 ### Add a New Metrics Source
 
