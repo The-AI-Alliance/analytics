@@ -1,0 +1,22 @@
+name: 📊 Add New or Modify Existing Dashboard
+description: Request create new dashboard or modify existing
+title: "[DASHBOARD] <short description>"
+labels: ["dashboard"]
+assignees: []
+projects: []
+body:
+- type: checkboxes
+  attributes:
+    label: Request Type
+    description: Select the type of request
+    options:
+    - label: Add New Dashboard
+    - label: Modify Existing Dashboard
+
+- type: textarea
+  attributes:
+    label: Description of request
+    description: Please include a description of the request
+    placeholder: e.g., Please modify the PyPi dashboard to include new KPI...
+  validations:
+    required: true
