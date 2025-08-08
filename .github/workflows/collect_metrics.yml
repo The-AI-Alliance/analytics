@@ -27,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest  
     permissions:  
       contents: read  # Read repo content (needed for repo object)  
+    # Modify per repository. This will prevent forks from executing and failing...  
     if: github.repository == 'The-AI-Alliance/analytics'  
     steps:  
       - name: Checkout code  
