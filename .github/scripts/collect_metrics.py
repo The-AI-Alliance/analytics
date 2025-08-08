@@ -1,3 +1,21 @@
+"""Collects various metrics from a GitHub repository using the GitHub API.
+
+Copyright 2025
+SPDX-License-Identifier: Apache-2.0
+Authors: Trevor Grant
+
+Metrics include:
+- Standard repository attributes (stars, forks, issues, etc.)
+- New forks and contributors in the last period
+- Traffic data (views, clones, referrers, paths)
+- Issues and pull requests opened/closed in the last period
+- Comments on issues and pull requests in the last period
+- Discussions metrics via GraphQL
+Outputs the collected metrics to a Parquet file.
+
+This is uploaded to the GitHub AI Alliance repository for metrics collection.
+"""
+
 import os
 import sys
 import pandas as pd
